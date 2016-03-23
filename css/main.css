@@ -1,0 +1,7 @@
+body {font-family: Play}
+
+header {background-color: linen}
+
+input.ng-invalid.ng-dirty {background-color: pink}
+
+input.ng-valid.ng-dirty {background-color: lightgreen}

@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   <!-- Bootstrap CDN - Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Font CDN -->
+  <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
   <!-- My JavaScript and CSS files -->
   <script src="js/slowTypist.js"></script>
   <link rel="stylesheet" href="css/main.css" />
@@ -21,9 +23,11 @@
 <div class="container">
   <header>
     <div class="row">
-      <div class="col-xs-12 text-center">
-        <h1>Clarence the Slow Typist</h1>
-        <h3>Using contemporary JavaScript libraries</h3>
+      <div class="col-xs-12 text-center page-header">
+        <h1>
+          Clarence the Slow Typist<br />
+          <small>Using contemporary JavaScript libraries</small>
+        </h1>
       </div>
     </div>
   </header>
@@ -33,33 +37,46 @@
         <div class="col-xs-12">
           <div class="panel panel-default">
             <div class="panel-body">
-              <p>
-                Clarence is a data entry worker who inputs IP addresses all day for his
-                job at the local ISP. Using a standard keypad, Clarence presses one button
-                at a time always using the same finger.
-              </p>
-              <p>
-                One day, Clarence begins to wonder just how far his finger has travelled
-                all these years. While he remained seated at his desk, his finger has
-                travelled many miles.
-              </p>
-              <p>
-                Clarence knows the distance between any two keys can be found using the
-                Pythagorean Theorem. This calculation assumes Clarence's finger stays perfectly level
-                on the depth axis.
-              </p>
-              <p>
-              With this in mind, Clarence formulates that he can find the distance his finger
-              has travelled within any IP address by determining the distance between
-              every keystroke and add them all together.
-              </p>
+              <div class="row">
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                  <p>
+                    Clarence is a data entry worker who inputs IP addresses all day for his
+                    job at the local ISP. Using a standard keypad, Clarence presses one button
+                    at a time always using the same finger.
+                  </p>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                  <p>
+                    One day, Clarence begins to wonder just how far his finger has travelled
+                    all these years. While he remained seated at his desk, his finger has
+                    travelled many miles.
+                  </p>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                  <p>
+                    Clarence knows the distance between any two keys can be found using the
+                    Pythagorean Theorem. This calculation assumes Clarence's finger stays perfectly level
+                    on the depth axis.
+                  </p>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                  <p>
+                    With this in mind, Clarence formulates that he can find the distance his finger
+                    has travelled within any IP address by determining the distance between
+                    every keystroke and add them all together.
+                  </p>
+                </div>
+              </div>
+              <hr />
               <p class="text-center">
-                Ddistance between two adjacent keys on keypad = 1 cm<br />
-                N = Number of characters<br />
-                N-1 = Number of movements between keys<br />
-                Distance between two keys = sqrt(heightDifference^2 + horizontalDifference^2)<br />
-                X = List of differences between adjacent pairs of keys in IP address<br />
-                Total distance = ∑ X
+                Distance between two adjacent keys on keypad = 1 cm<br />
+                <var>N</var> = Number of characters<br />
+                <var>N-1</var> = Number of movements between keys<br />
+                <var>dx</var> = Horizontal distance between two keys<br />
+                <var>dy</var> = Vertical distance between two keys<br />
+                Distance between two keys = sqrt( <var>dx</var> ^<sup>2</sup> + <var>dy</var> ^<sup>2</sup> )<br />
+                <var>X</var> = List of distances between adjacent pairs of characters in IP address<br />
+                Total distance = ∑ <var>X</var>
               </p>
             </div>
           </div>
@@ -67,9 +84,6 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <!-- Use a regex filter here -->
-          <style>input.ng-invalid.ng-dirty {background-color: pink}</style>
-          <style>input.ng-valid.ng-dirty {background-color: lightgreen}</style>
           <form name="newForm">
             <fieldset>
               <input type="text" ng-model="entry.address" required ng-pattern="/^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/" class="form-control text-center" placeHolder="000.000.000.000" />
@@ -87,8 +101,7 @@
         <div class="col-xs-12">
           <div class="well text-center">
             <p>
-              Output: <!-- Angular model output goes here -->{{distance(entry, newForm) | number:2 }}
-
+              Total Distance: {{distance(entry, newForm) | number:2 }} cm
             </p>
           </div>
         </div>
@@ -96,6 +109,7 @@
     </div>
   </main>
   <footer>
+    <hr />
     <p>
       Developed by: <a href="http://www.dustinwalker.me/">Dustin Walker</a>
     </p>
