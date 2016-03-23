@@ -7,9 +7,11 @@ app.controller('IPDistanceController',
 
 
   $scope.distance = function(entry, newForm){
-    if (newForm.$invalid) {
+    if (newForm.$invalid && newForm.$pristine) {
+      return "0 cm";
+    } else if (newForm.$invalid && newForm.$dirty) {
       return "invalid IP address";
-    } else {
+    } else { // newForm.$valid
       // Do the actual calculation here
       return entry.address;
     };

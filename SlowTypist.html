@@ -54,6 +54,7 @@
               every keystroke and add them all together.
               </p>
               <p class="text-center">
+                Ddistance between two adjacent keys on keypad = 1 cm<br />
                 N = Number of characters<br />
                 N-1 = Number of movements between keys<br />
                 Distance between two keys = sqrt(heightDifference^2 + horizontalDifference^2)<br />
@@ -71,7 +72,7 @@
           <style>input.ng-valid.ng-dirty {background-color: lightgreen}</style>
           <form name="newForm">
             <fieldset>
-              <input type="text" ng-model="entry.address" required ng-valid="calculateDistance()" ng-pattern="/^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/" class="form-control text-center" placeHolder="000.000.000.000" />
+              <input type="text" ng-model="entry.address" required ng-pattern="/^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/" class="form-control text-center" placeHolder="000.000.000.000" />
             </fieldset>
           </form>
         </div>
