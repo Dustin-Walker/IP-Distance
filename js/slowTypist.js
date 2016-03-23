@@ -15,7 +15,6 @@ app.controller('IPDistanceController',
 
   var calculateDistance = function(word) {
     var arr = [...word];
-    var differenceList = [];
     var sum = 0;
     for(var len = arr.length, i = 1; i < len; i++){
       // Calculate distance between current point and previous point
