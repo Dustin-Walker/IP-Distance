@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="IPDistance">
 <head>
   <meta charset="utf-8" />
   <title>Clarence the Slow Typist</title>
@@ -28,7 +28,7 @@
     </div>
   </header>
   <main>
-    <div ng-controller="">
+    <div ng-controller="IPDistanceController">
       <div class="row">
         <div class="col-xs-12">
           <div class="panel panel-default">
@@ -67,7 +67,13 @@
       <div class="row">
         <div class="col-xs-12">
           <!-- Use a regex filter here -->
-          <input type="text" ng-model="" class="form-control text-center" placeHolder="000.000.000.000" />
+          <style>input.ng-invalid.ng-dirty {background-color: pink}</style>
+          <style>input.ng-valid.ng-dirty {background-color: lightgreen}</style>
+          <form name="newForm">
+            <fieldset>
+              <input type="text" ng-model="entry.address" required ng-valid="calculateDistance()" ng-pattern="/^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/" class="form-control text-center" placeHolder="000.000.000.000" />
+            </fieldset>
+          </form>
         </div>
       </div>
       <div class="row">
@@ -80,12 +86,12 @@
         <div class="col-xs-12">
           <div class="well text-center">
             <p>
-              Output: <!-- Angular model output goes here -->0 cm
+              Output: <!-- Angular model output goes here -->{{distance(entry, newForm)}}
+
             </p>
           </div>
         </div>
       </div>
-
     </div>
   </main>
   <footer>
