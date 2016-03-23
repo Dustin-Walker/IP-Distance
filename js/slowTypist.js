@@ -16,6 +16,7 @@ app.controller('IPDistanceController',
   var calculateDistance = function(word) {
     var arr = [...word];
     var differenceList = [];
+    var sum = 0;
     for(var len = arr.length, i = 1; i < len; i++){
       // Calculate distance between current point and previous point
       // until the end is reached
@@ -101,13 +102,10 @@ app.controller('IPDistanceController',
       var dxSQ = Math.pow(Math.abs(x0-x1), 2);
       var dySQ = Math.pow(Math.abs(y0-y1), 2);
       var distanceBetweenKeys = Math.sqrt( dxSQ + dySQ );
-      differenceList.push(distanceBetweenKeys);
+      sum += distanceBetweenKeys;
     };
-    var totalDistance = differenceList.reduce(function(a, b) {
-      return a + b;
-    });
 
-    return totalDistance;
+    return sum;
   };
 
 });
