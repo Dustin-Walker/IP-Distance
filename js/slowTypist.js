@@ -30,14 +30,14 @@ app.controller('IPDistanceController',
         case 0:
           x0 = 1; y0 = 0;
           break;
-        case 7:
-          x0 = 0; y0 = 1;
+        case 1:
+          x0 = 0; y0 = 3;
           break;
-        case 8:
-          x0 = 1; y0 = 1;
+        case 2:
+          x0 = 1; y0 = 3;
           break;
-        case 9:
-          x0 = 2; y0 = 1;
+        case 3:
+          x0 = 2; y0 = 3;
           break;
         case 4:
           x0 = 0; y0 = 2;
@@ -48,14 +48,14 @@ app.controller('IPDistanceController',
         case 6:
           x0 = 2; y0 = 2;
           break;
-        case 1:
-          x0 = 0; y0 = 3;
+        case 7:
+          x0 = 0; y0 = 1;
           break;
-        case 2:
-          x0 = 1; y0 = 3;
+        case 8:
+          x0 = 1; y0 = 1;
           break;
-        case 3:
-          x0 = 2; y0 = 3;
+        case 9:
+          x0 = 2; y0 = 1;
           break;
         default:
           val0 = ".";
@@ -66,14 +66,14 @@ app.controller('IPDistanceController',
         case 0:
           x1 = 1; y1 = 0;
           break;
-        case 7:
-          x1 = 0; y1 = 1;
+        case 1:
+          x1 = 0; y1 = 3;
           break;
-        case 8:
-          x1 = 1; y1 = 1;
+        case 2:
+          x1 = 1; y1 = 3;
           break;
-        case 9:
-          x1 = 2; y1 = 1;
+        case 3:
+          x1 = 2; y1 = 3;
           break;
         case 4:
           x1 = 0; y1 = 2;
@@ -84,14 +84,14 @@ app.controller('IPDistanceController',
         case 6:
           x1 = 2; y1 = 2;
           break;
-        case 1:
-          x1 = 0; y1 = 3;
+        case 7:
+          x1 = 0; y1 = 1;
           break;
-        case 2:
-          x1 = 1; y1 = 3;
+        case 8:
+          x1 = 1; y1 = 1;
           break;
-        case 3:
-          x1 = 2; y1 = 3;
+        case 9:
+          x1 = 2; y1 = 1;
           break;
         default:
           val1 = ".";
