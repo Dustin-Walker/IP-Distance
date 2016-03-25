@@ -1,4 +1,4 @@
-# IP-Distance : [DustinWalker.me/ip-distance](http://dustinwalker.me/ip-distance/)
+# [IP-Distance](http://dustinwalker.me/assets/IP%20Distance/SlowTypist.html) : [DustinWalker.me/ip-distance](http://dustinwalker.me/ip-distance/)
 ###Find the distance within an IP address
 
 ---
