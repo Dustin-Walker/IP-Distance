@@ -3,12 +3,16 @@
 var app = angular.module('IPDistance', []);
 
 app.controller('IPDistanceController',
+
   function IPDistanceController($scope) {
 
+  $scope.entry = {};
+  $scope.entry.address = "";
   $scope.distance = function(entry, newForm){
     if (newForm.$invalid) {
       return 0;
     } else { // newForm.$valid
+    //  console.log(typeof entry);
       return calculateDistance(entry.address);
     };
   };
@@ -105,6 +109,17 @@ app.controller('IPDistanceController',
     };
 
     return sum;
+  };
+
+  $scope.keypadEntry = function(concatValue) {
+    if ($scope.entry.address) {
+      $scope.entry.address.concat(concatValue);
+      console.log($scope.entry.address);
+      return $scope.entry.address = $scope.entry.address.concat(concatValue);
+    } else {
+      $scope.entry.address = "";
+      return $scope.entry.address = $scope.entry.address.concat(concatValue);
+    }
   };
 
 });
