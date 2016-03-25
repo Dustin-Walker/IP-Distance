@@ -11,8 +11,7 @@ app.controller('IPDistanceController',
   $scope.distance = function(entry, newForm){
     if (newForm.$invalid) {
       return 0;
-    } else { // newForm.$valid
-    //  console.log(typeof entry);
+    } else {
       return calculateDistance(entry.address);
     };
   };
@@ -112,14 +111,14 @@ app.controller('IPDistanceController',
   };
 
   $scope.keypadEntry = function(concatValue) {
-    if ($scope.entry.address) {
-      $scope.entry.address.concat(concatValue);
-      console.log($scope.entry.address);
-      return $scope.entry.address = $scope.entry.address.concat(concatValue);
-    } else {
-      $scope.entry.address = "";
-      return $scope.entry.address = $scope.entry.address.concat(concatValue);
-    }
+    if (!$scope.entry.address) {
+      var text = $("#address").val();
+      if (text == "") {
+        $scope.entry.address = "";
+      } else {
+        $scope.entry.address = text;
+      };
+    };
+    return $scope.entry.address = $scope.entry.address.concat(concatValue);
   };
-
 });

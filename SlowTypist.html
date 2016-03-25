@@ -85,71 +85,63 @@
       <div class="row">
         <div class="col-xs-12">
           <form name="newForm">
-  <fieldset>
-            <div class="row">
-              <div class="col-xs-12">
-
-<!--
-                    <input type="text" ng-init="000.000.000.000" name="address" ng-change="getRawValue(newForm)" ng-model="entry.address" required ng-pattern="/^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/" class="form-control text-center" placeHolder="000.000.000.000" />
-  -->
-                  <input type="text" ng-init="000.000.000.000" ng-model="entry.address" required class="form-control text-center" placeHolder="000.000.000.000" />
-
+            <fieldset>
+              <div class="row">
+                <div class="col-xs-12">
+                  <input type="text" id="address" ng-model="entry.address" required ng-pattern="/^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/" class="form-control text-center" placeHolder="000.000.000.000" />
+                </div>
               </div>
-            </div>
-
-            <div class="row">
-              <div class="col-xs-12">
-
+              <div class="row">
+                <div class="col-xs-12">
+                </div>
               </div>
-            </div>
-            <br />
-            <div class="row">
-              <div class="col-xs-12 text-center">
-                <!-- Interactive keypad goes here -->
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(1, newForm)">1</button>
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(2)">2</button>
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(3)">3</button>
+              <br />
+              <div class="row">
+                <div class="col-xs-12 text-center">
+                  <!-- Interactive keypad goes here -->
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(1)">1</button>
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(2)">2</button>
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(3)">3</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(4)">4</button>
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(5)">5</button>
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(6)">6</button>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(4)">4</button>
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(5)">5</button>
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(6)">6</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(7)">7</button>
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(8)">8</button>
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(9)">9</button>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(7)">7</button>
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(8)">8</button>
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(9)">9</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry('.')">.</button>
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry(0)">0</button>
-                      <button type="button" class="key btn btn-default" ng-click="keypadEntry('#')">#</button>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry('.')">.</button>
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(0)">0</button>
+                        <button type="button" class="key btn btn-default" ng-click="keypadEntry('#')">#</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-  </fieldset>
+            </fieldset>
           </form>
         </div>
       </div>
       <hr />
-
       <br />
       <div class="row">
         <div class="col-xs-12">

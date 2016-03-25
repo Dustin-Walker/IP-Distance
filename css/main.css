@@ -2,6 +2,12 @@ body {font-family: Play}
 
 header {background-color: linen}
 
+input.ng-pristine.ng-invalid {background-color: orange}
+
+input.ng-valid.ng-pristine {background-color: lightgreen}
+
+input.ng-invalid.ng-not-empty {background-color: pink}
+
 input.ng-invalid.ng-dirty {background-color: pink}
 
 input.ng-valid.ng-dirty {background-color: lightgreen}
@@ -9,16 +15,4 @@ input.ng-valid.ng-dirty {background-color: lightgreen}
 .key {
   width: 33px;
   padding: 5px 10px !important;
-}
-
-// Class
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-// Usage as a mixin
-.element {
-  .center-block();
 }
