@@ -125,5 +125,38 @@ app.controller('IPDistanceController',
   $scope.resetKeypad = function() {
     return $scope.entry.address = "";
   };
+  
+  $scope.keypadDelete = function() {
+	  var currentEntry = "";
+	  var inputBox = $('#address')[0];
+	  if (!$scope.entry.address) {
+		  currentEntry = inputBox.value;
+		  if (currentEntry == "")
+			  return; // Do nothing
+	  } else {
+		  currentEntry = $scope.entry.address;
+	  }
+	  var cursorStartPosition = inputBox.selectionStart;
+	  var cursorEndPosition = inputBox.selectionEnd;
+	  if (cursorStartPosition == cursorEndPosition) { 
+	  // No selection highlighted, delete one character behind cursor
+		if (cursorStartPosition == 0)
+			return; // Do nothing
+		return $scope.entry.address = inputBox.value.slice(0, cursorStartPosition-1) + inputBox.value.slice(cursorStartPosition, inputBox.value.length);
+	  } else { 
+	  // Selection highlighted, delete entire highlighted field
+		if (cursorStartPosition == 0 && cursorEndPosition == inputBox.value.length) {
+			return $scope.resetKeypad();
+		}
+		if (cursorStartPosition == 0) {
+			return $scope.entry.address = inputBox.value.slice(inputBox.selectionEnd, inputBox.value.length);
+		}
+		if (cursorEndPosition == inputBox.value.length) {
+			return $scope.entry.address = inputBox.value.slice(0, cursorStartPosition);
+		}
+		return $scope.entry.address = inputBox.value.slice(0, cursorStartPosition) + inputBox.value.slice(cursorEndPosition, inputBox.value.length);
+	  };
+	  return;
+  };
 
 });
