@@ -121,4 +121,9 @@ app.controller('IPDistanceController',
     };
     return $scope.entry.address = $scope.entry.address.concat(concatValue);
   };
+
+  $scope.resetKeypad = function() {
+    return $scope.entry.address = "";
+  };
+
 });
