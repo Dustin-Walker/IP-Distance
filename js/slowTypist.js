@@ -8,6 +8,8 @@ app.controller('IPDistanceController',
 
   $scope.entry = {};
   $scope.entry.address = "";
+	$scope.addressList = {};
+	$scope.addressList.sum = 0;
   $scope.distance = function(entry, newForm){
     if (newForm.$invalid) {
       return 0;
@@ -158,5 +160,20 @@ app.controller('IPDistanceController',
 	  };
 	  return;
   };
+  
+  $scope.keypadAdd = function(address) {
+	// Only enabled when the entry field is valid
+		$scope.addressList[address] = {"ip":address, "distance":calculateDistance(address)};
+		$scope.addressList.sum += $scope.addressList[address].distance;
+		return;
+  };
+	
+	$scope.removeFromList = function(record) {
+		$scope.addressList.sum -= $scope.addressList[record.ip].distance;
+		delete $scope.addressList[record.ip];
+		return;
+	};
+	
+	
 
 });
