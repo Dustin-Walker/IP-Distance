@@ -18,8 +18,12 @@ input.ng-valid.ng-dirty {background-color: lightgreen}
   padding: 5px 10px !important;
 }
 
-#clearKey{
+#clearKey {
   width: 198px;
   height: 60px;
   padding: 5px 10px !important;
+}
+
+.fourkeyrow {
+	margin-left:66px;
 }

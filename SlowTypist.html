@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Clarence the Slow Typist</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Angular CDN - Compiled and minified JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -125,10 +126,9 @@
 									</div>
 								</div>
 							</div>
-							
-              <div class="row">
-                <div class="col-xs-12">
-                </div>
+						  <div class="row">
+							<div class="col-xs-12">
+              </div>
               </div>
               <br />
               <div class="row">
@@ -136,21 +136,21 @@
                   <!-- Interactive keypad goes here -->
                   <div class="row">
                     <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                      <div class="btn-group btn-group-lg fourkeyrow" role="group" aria-label="...">
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(1)">1</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(2)">2</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(3)">3</button>
-						<button type="button" class="key btn btn-default" ng-click="keypadDelete()"><i class="fa fa-arrow-left"></i>DEL</button>
+												<button type="button" class="key btn btn-default" ng-click="keypadDelete()"><i class="fa fa-arrow-left"></i>DEL</button>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                      <div class="btn-group btn-group-lg fourkeyrow" role="group" aria-label="...">
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(4)">4</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(5)">5</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(6)">6</button>
-						<button type="button" class="key btn btn-default" ng-disabled="!newForm.$valid" ng-click="keypadAdd(entry.address)"><i class="fa fa-plus-circle"></i>ADD</button>
+												<button type="button" class="key btn btn-default" ng-disabled="!newForm.$valid" ng-click="keypadAdd(entry.address)"><i class="fa fa-plus-circle"></i>ADD</button>
                       </div>
                     </div>
                   </div>
