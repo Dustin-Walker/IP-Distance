@@ -27,3 +27,17 @@ input.ng-valid.ng-dirty {background-color: lightgreen}
 .fourkeyrow {
 	margin-left:66px;
 }
+
+#addKey {
+	background-color: lightgreen !important;
+	background-image: none;
+	border-color: #8BC18B;
+  color: black;	
+}
+
+#deleteKey {
+	background-color: pink !important;
+	background-image: none;
+	border-color: #C59FA5;
+  color: black;
+}

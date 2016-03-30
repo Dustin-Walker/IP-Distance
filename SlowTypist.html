@@ -140,7 +140,7 @@
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(1)">1</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(2)">2</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(3)">3</button>
-												<button type="button" class="key btn btn-default" ng-click="keypadDelete()"><i class="fa fa-arrow-left"></i>DEL</button>
+												<button type="button" id="deleteKey" class="key btn btn-danger" ng-click="keypadDelete()"><i class="fa fa-arrow-left"></i>DEL</button>
                       </div>
                     </div>
                   </div>
@@ -150,7 +150,7 @@
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(4)">4</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(5)">5</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(6)">6</button>
-												<button type="button" class="key btn btn-default" ng-disabled="!newForm.$valid" ng-click="keypadAdd(entry.address)"><i class="fa fa-plus-circle"></i>ADD</button>
+												<button type="button" id="addKey" class="key btn btn-success" ng-disabled="!newForm.$valid" ng-click="keypadAdd(entry.address)"><i class="fa fa-plus-circle"></i>ADD</button>
                       </div>
                     </div>
                   </div>
@@ -175,7 +175,7 @@
                   <div class="row">
                     <div class="col-xs-12">
                       <div class="btn-group btn-group-lg" role="group" aria-label="...">
-                        <button type="button" id="clearKey" class="btn btn-default" ng-click="resetKeypad()">CLEAR</button>
+                        <button type="button" id="clearKey" class="btn btn-warning" ng-click="resetKeypad()">CLEAR</button>
                       </div>
                     </div>
                   </div>
