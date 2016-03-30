@@ -163,8 +163,11 @@ app.controller('IPDistanceController',
   
   $scope.keypadAdd = function(address) {
 	// Only enabled when the entry field is valid
-		$scope.addressList[address] = {"ip":address, "distance":calculateDistance(address)};
-		$scope.addressList.sum += $scope.addressList[address].distance;
+		if(!(address in $scope.addressList)) {
+			$scope.addressList[address] = {"ip":address, "distance":calculateDistance(address)};
+			$scope.addressList.sum += $scope.addressList[address].distance;
+		};
+
 		return;
   };
 	
