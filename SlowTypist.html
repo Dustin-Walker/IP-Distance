@@ -22,6 +22,8 @@
   <!-- My JavaScript and CSS files -->
   <script src="js/slowTypist.js"></script>
   <link rel="stylesheet" href="css/main.css" />
+	<!-- FileSaver.js -->
+	<script src="js/FileSaver.js/FileSaver.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -156,26 +158,34 @@
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                      <div class="btn-group btn-group-lg fourkeyrow" role="group" aria-label="...">
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(7)">7</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(8)">8</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(9)">9</button>
+												<button type="button" id="saveKey" class="key btn btn-info" ng-click="fileSave()"><i class="fa fa-download"></i> SAVE</button>
                       </div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                      <div class="btn-group btn-group-lg fourkeyrow" role="group" aria-label="...">
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry('.')">.</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry(0)">0</button>
                         <button type="button" class="key btn btn-default" ng-click="keypadEntry('#')">#</button>
-                      </div>
+												<!--<button type="button" class="key btn btn-default">-->
+												<div id="fileUpload" class="key btn btn-primary">
+													<input type="file" id="upload" ng-click="enableUseKey()" />
+													<i class="fa fa-upload"></i> LOAD
+												</div>
+												<!--</button>-->
+											</div>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg" role="group" aria-label="...">
+                      <div class="btn-group btn-group-lg" role="group" aria-label="..." id="bottomRow">
                         <button type="button" id="clearKey" class="btn btn-warning" ng-click="resetKeypad()">CLEAR</button>
+												<button type="button" id="useKey" class="btn btn-info" ng-disabled="!fileSignal" ng-click="fileLoad()"> USE</button>
                       </div>
                     </div>
                   </div>

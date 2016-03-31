@@ -10,6 +10,7 @@ app.controller('IPDistanceController',
   $scope.entry.address = "";
 	$scope.addressList = {};
 	$scope.addressList.sum = 0;
+	$scope.fileSignal = false;
   $scope.distance = function(entry, newForm){
     if (newForm.$invalid) {
       return 0;
@@ -177,6 +178,32 @@ app.controller('IPDistanceController',
 		return;
 	};
 	
+	$scope.fileSave = function() {
+		// Add some kind of verification here
+		// http://getbootstrap.com/javascript/#modals - Use this
+		var jsonText = JSON.stringify($scope.addressList);
+		var file = new Blob([jsonText], {type: "text/plain;charset=utf-8"});
+		saveAs(file, "IP-Distance-List.json");
+		return;
+	};
 	
+	$scope.enableUseKey = function() {
+		$scope.fileSignal = true;
+		return; 
+	}
+	
+	$scope.fileLoad = function() {
+		var file = $('#upload')[0].files[0];
+		var reader = new FileReader;
+		reader.readAsText(file);
+		reader.addEventListener("load", function(event) {
+			var jsonFile = JSON.parse(event.target.result);
+			$scope.addressList = jsonFile;
+			$scope.$apply();
+			// alert(jsonFile.sum);
+			// File validation should be performed here
+		});
+		return;
+	}
 
 });
