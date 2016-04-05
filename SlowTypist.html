@@ -1,123 +1,126 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="IPDistance">
 <head>
-  <meta charset="utf-8" />
-  <title>Clarence the Slow Typist</title>
+	<meta charset="utf-8"/>
+	<title>Clarence the Slow Typist</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Angular CDN - Compiled and minified JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- Bootstrap CDN - Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <!-- Bootstrap CDN - Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-  <!-- Bootstrap CDN - Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <!-- Font CDN -->
-  <link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- My JavaScript and CSS files -->
-  <script src="js/slowTypist.js"></script>
-  <link rel="stylesheet" href="css/main.css" />
+	<!-- Angular CDN - Compiled and minified JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Bootstrap CDN - Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+				integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- Bootstrap CDN - Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+				integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+	<!-- Bootstrap CDN - Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+					integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+					crossorigin="anonymous"></script>
+	<!-- Font CDN -->
+	<link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet' type='text/css'>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- My JavaScript and CSS files -->
+	<script src="js/slowTypist.js"></script>
+	<link rel="stylesheet" href="css/main.css"/>
 	<!-- FileSaver.js -->
 	<script src="js/FileSaver.js/FileSaver.min.js"></script>
 </head>
 <body>
 <div class="container">
-  <header>
-    <div class="row">
-      <div class="col-xs-12 text-center page-header">
-        <h1>
-          Clarence the Slow Typist<br />
-          <small>Using contemporary JavaScript libraries</small>
-        </h1>
-      </div>
-    </div>
-  </header>
-  <main>
-    <div ng-controller="IPDistanceController">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-xs-12 col-md-6 col-lg-3">
-                  <p>
-                    Clarence is a data entry worker who inputs IP addresses all day for his
-                    job at the local ISP. Using a standard keypad, Clarence presses one button
-                    at a time always using the same finger.
-                  </p>
-                </div>
-                <div class="col-xs-12 col-md-6 col-lg-3">
-                  <p>
-                    One day, Clarence begins to wonder just how far his finger has travelled
-                    all these years. While he remained seated at his desk, his finger has
-                    travelled many miles.
-                  </p>
-                </div>
-                <div class="col-xs-12 col-md-6 col-lg-3">
-                  <p>
-                    Clarence knows the distance between any two keys can be found using the
-                    Pythagorean Theorem. This calculation assumes Clarence's finger stays perfectly level
-                    on the depth axis.
-                  </p>
-                </div>
-                <div class="col-xs-12 col-md-6 col-lg-3">
-                  <p>
-                    With this in mind, Clarence formulates that he can find the distance his finger
-                    has travelled within any IP address by determining the distance between
-                    every keystroke and add them all together.
-                  </p>
-                </div>
-              </div>
-              <hr />
-              <p class="text-center">
-                Distance between two adjacent keys on keypad = 1 cm<br />
-                <var>N</var> = Number of characters<br />
-                <var>N-1</var> = Number of movements between keys<br />
-                <var>dx</var> = Horizontal distance between two keys<br />
-                <var>dy</var> = Vertical distance between two keys<br />
-                Distance between two keys = sqrt( <var>dx</var> ^<sup>2</sup> + <var>dy</var> ^<sup>2</sup> )<br />
-                <var>X</var> = List of distances between adjacent pairs of characters in IP address<br />
-                Total distance = ∑ <var>X</var>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-			
+	<header>
+		<div class="row">
+			<div class="col-xs-12 text-center page-header">
+				<h1>
+					Clarence the Slow Typist<br/>
+					<small>Using contemporary JavaScript libraries</small>
+				</h1>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div ng-controller="IPDistanceController">
 			<div class="row">
 				<div class="col-xs-12">
-				<ul ng-hide="addressList.sum <= 0" class="list-group text-center">
-					<div ng-repeat="record in addressList track by $index" ng-if="record.ip">
-						<li class="list-group-item">
-							<span class="badge" ng-click="removeFromList(record)">
-								<i class="fa fa-remove">
-								</i>
-							</span>
-							{{record.ip}} : {{record.distance | number : 2}} cm
-							</li>
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-xs-12 col-md-6 col-lg-3">
+									<p>
+										Clarence is a data entry worker who inputs IP addresses all day for his
+										job at the local ISP. Using a standard keypad, Clarence presses one button
+										at a time always using the same finger.
+									</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-3">
+									<p>
+										One day, Clarence begins to wonder just how far his finger has travelled
+										all these years. While he remained seated at his desk, his finger has
+										travelled many miles.
+									</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-3">
+									<p>
+										Clarence knows the distance between any two keys can be found using the
+										Pythagorean Theorem. This calculation assumes Clarence's finger stays perfectly
+										level
+										on the depth axis.
+									</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-3">
+									<p>
+										With this in mind, Clarence formulates that he can find the distance his finger
+										has travelled within any IP address by determining the distance between
+										every keystroke and add them all together.
+									</p>
+								</div>
+							</div>
+							<hr/>
+							<p class="text-center">
+								Distance between two adjacent keys on keypad = 1 cm<br/>
+								<var>N</var> = Number of characters<br/>
+								<var>N-1</var> = Number of movements between keys<br/>
+								<var>dx</var> = Horizontal distance between two keys<br/>
+								<var>dy</var> = Vertical distance between two keys<br/>
+								Distance between two keys = sqrt( <var>dx</var> ^<sup>2</sup> + <var>dy</var>
+								^<sup>2</sup> )<br/>
+								<var>X</var> = List of distances between adjacent pairs of characters in IP address<br/>
+								Total distance = ∑ <var>X</var>
+							</p>
+						</div>
 					</div>
-					<li class="list-group-item list-group-item-info">
-						Total Distance: {{ addressList.sum | number : 2 }} cm
-					</li>
-				</ul>
 				</div>
 			</div>
-			
-			
-      <div class="row">
-        <div class="col-xs-12">
-          <form name="newForm">
-            <fieldset>
-              <div class="row">
-                <div class="col-xs-12">
-                  <input type="text" id="address" ng-model="entry.address" required ng-pattern="/^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/" class="form-control text-center" placeHolder="000.000.000.000" />
-                </div>
-              </div>
-							<br />
+			<div class="row">
+				<div class="col-xs-12">
+					<ul ng-hide="addressList.sum <= 0" class="list-group text-center">
+						<li class="list-group-item" ng-repeat="record in addressList track by $index" ng-if="record.ip">
+                        <span class="badge" ng-click="removeFromList(record)">
+                            <i class="fa fa-remove">
+                            </i>
+                        </span>
+							{{record.ip}} : {{record.distance | number : 2}} cm
+						</li>
+						<li class="list-group-item list-group-item-info">
+							Total Distance: {{ addressList.sum | number : 2 }} cm
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<form name="newForm">
+						<fieldset>
+							<div class="row">
+								<div class="col-xs-12">
+									<input type="text" id="address" ng-model="entry.address" required
+												 ng-pattern="/^(?:(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)\.){3}(?:2[0-4]\d|25[0-5]|1\d{2}|[1-9]?\d)(?:\:(?:\d|[1-9]\d{1,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?$/"
+												 class="form-control text-center" placeHolder="000.000.000.000"/>
+								</div>
+							</div>
+							<br/>
 							<div class="row">
 								<div class="col-xs-12">
 									<div class="well well-sm text-center">
@@ -127,84 +130,126 @@
 									</div>
 								</div>
 							</div>
-						  <div class="row">
-							<div class="col-xs-12">
-              </div>
-              </div>
-              <br />
-              <div class="row">
-                <div class="col-xs-12 text-center">
-                  <!-- Interactive keypad goes here -->
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg fourkeyrow" role="group" aria-label="...">
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(1)">1</button>
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(2)">2</button>
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(3)">3</button>
-												<button type="button" id="deleteKey" class="key btn btn-danger" ng-click="keypadDelete()"><i class="fa fa-arrow-left"></i>DEL</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg fourkeyrow" role="group" aria-label="...">
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(4)">4</button>
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(5)">5</button>
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(6)">6</button>
-												<button type="button" id="addKey" class="key btn btn-success" ng-disabled="!newForm.$valid" ng-click="keypadAdd(entry.address)"><i class="fa fa-plus-circle"></i>ADD</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg fourkeyrow" role="group" aria-label="...">
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(7)">7</button>
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(8)">8</button>
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(9)">9</button>
-												<button type="button" id="saveKey" class="key btn btn-info" ng-click="fileSave()"><i class="fa fa-download"></i> SAVE</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg fourkeyrow" role="group" aria-label="...">
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry('.')">.</button>
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry(0)">0</button>
-                        <button type="button" class="key btn btn-default" ng-click="keypadEntry('#')">#</button>
+							<div class="row">
+								<div class="col-xs-12">
+								</div>
+							</div>
+							<br/>
+							<div class="row">
+								<div class="col-xs-12 text-center">
+									<!-- Interactive keypad goes here -->
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="btn-group btn-group-lg fourkeyrow" role="group"
+													 aria-label="...">
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(1)">1
+												</button>
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(2)">2
+												</button>
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(3)">3
+												</button>
+												<button type="button" id="deleteKey" class="key btn btn-danger"
+																ng-click="keypadDelete()"><i class="fa fa-arrow-left"></i>DEL
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="btn-group btn-group-lg fourkeyrow" role="group"
+													 aria-label="...">
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(4)">4
+												</button>
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(5)">5
+												</button>
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(6)">6
+												</button>
+												<button type="button" id="addKey" class="key btn btn-success"
+																ng-disabled="!newForm.$valid"
+																ng-click="keypadAdd(entry.address)"><i
+													class="fa fa-plus-circle"></i>ADD
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="btn-group btn-group-lg fourkeyrow" role="group"
+													 aria-label="...">
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(7)">7
+												</button>
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(8)">8
+												</button>
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(9)">9
+												</button>
+												<button type="button" id="saveKey" class="key btn btn-info"
+																ng-click="fileSave()"><i class="fa fa-download"></i> SAVE
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="btn-group btn-group-lg fourkeyrow" role="group"
+													 aria-label="...">
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry('.')">.
+												</button>
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry(0)">0
+												</button>
+												<button type="button" class="key btn btn-default"
+																ng-click="keypadEntry('#')">#
+												</button>
 												<!--<button type="button" class="key btn btn-default">-->
 												<div id="fileUpload" class="key btn btn-primary">
-													<input type="file" id="upload" ng-click="enableUseKey()" />
+													<input type="file" id="upload" ng-click="enableUseKey()"/>
 													<i class="fa fa-upload"></i> LOAD
 												</div>
 												<!--</button>-->
 											</div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <div class="btn-group btn-group-lg" role="group" aria-label="..." id="bottomRow">
-                        <button type="button" id="clearKey" class="btn btn-warning" ng-click="resetKeypad()">CLEAR</button>
-												<button type="button" id="useKey" class="btn btn-info" ng-disabled="!fileSignal" ng-click="fileLoad()"> USE</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <hr />
-    <p>
-      Developed by: <a href="http://www.dustinwalker.me/">Dustin Walker</a>
-    </p>
-    <p>
-      Concept Source: <a href="https://www.reddit.com/r/dailyprogrammer/comments/4bc3el/20160321_challenge_259_easy_clarence_the_slow/">Reddit.com/r/DailyProgrammer</a>
-    </p>
-  </footer>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="btn-group btn-group-lg" role="group" aria-label="..."
+													 id="bottomRow">
+												<button type="button" id="clearKey" class="btn btn-warning"
+																ng-click="resetKeypad()">CLEAR
+												</button>
+												<button type="button" id="useKey" class="btn btn-info"
+																ng-disabled="!fileSignal" ng-click="fileLoad()"> USE
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<hr/>
+		<p>
+			Developed by: <a href="http://www.dustinwalker.me/">Dustin Walker</a>
+		</p>
+		<p>
+			Concept Source: <a
+			href="https://www.reddit.com/r/dailyprogrammer/comments/4bc3el/20160321_challenge_259_easy_clarence_the_slow/">Reddit.com/r/DailyProgrammer</a>
+		</p>
+	</footer>
 </div>
 </body>
 </html>
